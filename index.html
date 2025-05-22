@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap + jQuery Starter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
+  <link rel="stylesheet" href="./main.css">
+  <style>
+    body {
+      font-family: 'Quicksand', 'Work Sans', sans-serif;
+    }
+
+    h1 {
+      font-family: 'Quicksand', sans-serif; font-weight: 900;
+    }
+    .custom-btn {
+      background-color: #00A7FF;
+      border-color: #00A7FF;
+    }
+    .custom-btn:hover, 
+    .custom-btn:focus, 
+    .custom-btn:active {
+      background-color: #008ecc;
+      border-color: #008ecc;
+    }
+
+    /* Add some left padding so the toggle + nav don't get covered by logo on small screens */
+    @media (max-width: 767.98px) {
+      .navbar .container {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        position: relative;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- navbar navbar-expand-md navbar-light bg-light position-relative -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+  
+      <!-- Left section: Toggler + Brand -->
+      <div class="d-flex align-items-center">
+        <!-- Toggler button -->
+        <button 
+          class="navbar-toggler me-2" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navbarTogglerDemo02" 
+          aria-controls="navbarTogglerDemo02" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+      </div>
+  
+      <!-- Right section: Search button -->
+      <form class="d-flex ms-auto order-lg-2" role="search">
+        <button class="btn btn-primary custom-btn" type="submit">Book</button>
+      </form>
+  
+      <!-- Collapsible menu -->
+      <div class="collapse navbar-collapse order-lg-1" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-family: 'Quicksand', sans-serif;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <!-- Text content -->
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h1 class="mb-3 bold">
+            Welcome to Pita Dental - Your Smile Matters
+          </h1>
+          <p class="lead">
+            At Pita Dental, we deliver expert, compassionate care using the latest techniques—making every visit comfortable and focused on your smile, because your smile truly matters.
+          </p>
+          <div class="d-flex gap-3 my-4">
+            <a href="#" class="btn btn-primary custom-btn">Book</a>
+            <a href="#" class="btn btn-outline-secondary">Learn More</a>
+          </div>
+        </div>
+  
+        <!-- Image -->
+        <div class="col-md-6 text-center">
+          <img 
+            src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            alt="Happy patient at dental clinic" 
+            class="img-fluid rounded shadow"
+          />
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-5" style="background-color: #CCEDFF;">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <!-- Text content -->
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h2 class="mb-3 fw-bold" style="font-family: 'Quicksand', sans-serif;">
+            Affordable, Transparent Pricing
+          </h2>
+          <p class="lead mb-4" style="font-family: 'Quicksand', sans-serif;">
+            We believe great dental care should be accessible to everyone. That’s why Pita Dental offers transparent, competitive pricing—so you can focus on your health, not your wallet.
+          </p>
+        </div>
+  
+        <!-- Image -->
+        <div class="col-md-6 text-center">
+          <img 
+            src="https://images.unsplash.com/photo-1663182234283-28941e7612da?q=80&w=3148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            alt="Affordable dental care illustration" 
+            class="img-fluid rounded shadow"
+          />
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-5" style="background-color: #192025; color: #fff;">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <!-- Text Content -->
+        <div class="col-md-6 mb-4 mb-md-0 text-md-start">
+          <h2 class="fw-bold mb-3" style="font-family: 'Quicksand', sans-serif;">
+            Your Complete Dental Care, All in One Place
+          </h2>
+  
+          <p class="mb-4 gap-3" style="font-family: 'Quicksand', sans-serif;">
+            At Pita Dental, we provide a full range of services to meet your every dental need.<br>
+            <strong>Comprehensive Care:</strong> From cleanings to restorative procedures, we ensure your oral health stays strong for life.<br>
+            <strong>Cosmetic Care:</strong> Smile-enhancing treatments like whitening, veneers, and makeovers—personalized to your goals.
+          </p>
+  
+          <!-- CTA Buttons -->
+          <div class="d-flex gap-3 justify-content-md-start flex-wrap mb-4">
+            <a href="#" class="btn btn-outline-light">Learn More</a>
+            <a href="#" class="btn text-white" style="background-color: transparent; border: none;">Contact</a>
+          </div>
+        </div>
+  
+        <!-- Image -->
+        <div class="col-md-6 text-center">
+          <img 
+          src="https://images.unsplash.com/photo-1670250721717-889b17349fc4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGRlbnRpc3R8ZW58MHwwfDB8fHww" 
+            alt="General dental services illustration" 
+            class="img-fluid rounded shadow"
+          />
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-5" style="background-color: #fff; color: #222;">
+    <div class="container">
+      <!-- Heading -->
+      <h2 class="mb-4 fw-semibold" style="font-family: 'Quicksand', sans-serif; max-width: 700px; margin: 0 auto; text-align: center;">
+        Comprehensive dental services tailored to your unique needs at Pita Dental
+      </h2>
+  
+      <!-- Services grid -->
+      <div class="row g-4 justify-content-center">
+  
+        <!-- Service Item 1 -->
+        <div class="col-md-6 col-lg-3 text-center">
+          <div class="mb-3">
+            <!-- Tooth icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M12 2C10 7 8 14 8 18a4 4 0 0 0 8 0c0-4-2-11-4-16z"/>
+              <path d="M12 22v-4"/>
+            </svg>
+          </div>
+          <h5 style="font-family: 'Quicksand', sans-serif; font-weight: 600;">Preventive Care</h5>
+          <p class="mb-2" style="font-family: 'Quicksand', sans-serif; font-size: 0.95rem; color: #555;">
+            Routine cleanings and exams to keep your teeth healthy and prevent problems before they start.
+          </p>
+          <a href="#" style="font-weight: 600; color: #00A7FF; text-decoration: none;">Learn More &gt;</a>
+        </div>
+  
+        <!-- Service Item 2 -->
+        <div class="col-md-6 col-lg-3 text-center">
+          <div class="mb-3">
+            <!-- Sparkles icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M12 2l1.5 4.5 4.5 1.5-4.5 1.5L12 14l-1.5-4.5-4.5-1.5 4.5-1.5z"/>
+              <path d="M2 12l4.5 1.5 1.5 4.5-1.5-4.5-4.5-1.5z"/>
+            </svg>
+          </div>
+          <h5 style="font-family: 'Quicksand', sans-serif; font-weight: 600;">Cosmetic Dentistry</h5>
+          <p class="mb-2" style="font-family: 'Quicksand', sans-serif; font-size: 0.95rem; color: #555;">
+            Teeth whitening, veneers, and smile makeovers designed to enhance your natural beauty.
+          </p>
+          <a href="#" style="font-weight: 600; color: #00A7FF; text-decoration: none;">Learn More &gt;</a>
+        </div>
+  
+        <!-- Service Item 3 -->
+        <div class="col-md-6 col-lg-3 text-center">
+          <div class="mb-3">
+            <!-- Tool/Wrench icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M14 9l-3 3-7 7-3-3 7-7 3-3 2 2z"/>
+              <path d="M18 6l-3-3-4 4"/>
+            </svg>
+          </div>
+          <h5 style="font-family: 'Quicksand', sans-serif; font-weight: 600;">Restorative Care</h5>
+          <p class="mb-2" style="font-family: 'Quicksand', sans-serif; font-size: 0.95rem; color: #555;">
+            Fillings, crowns, and bridges to restore the function and appearance of damaged teeth.
+          </p>
+          <a href="#" style="font-weight: 600; color: #00A7FF; text-decoration: none;">Learn More &gt;</a>
+        </div>
+  
+        <!-- Service Item 4 -->
+        <div class="col-md-6 col-lg-3 text-center">
+          <div class="mb-3">
+            <!-- Implant/Advanced Care icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <circle cx="12" cy="7" r="3"/>
+              <path d="M12 10v7"/>
+              <path d="M9 21h6"/>
+            </svg>
+          </div>
+          <h5 style="font-family: 'Quicksand', sans-serif; font-weight: 600;">Advanced Treatments</h5>
+          <p class="mb-2" style="font-family: 'Quicksand', sans-serif; font-size: 0.95rem; color: #555;">
+            Modern procedures including implants, root canals, and orthodontics to meet specialized needs.
+          </p>
+          <a href="#" style="font-weight: 600; color: #00A7FF; text-decoration: none;">Learn More &gt;</a>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <div class="container py-5">
+      <div class="row align-items-center">
+        
+        <!-- Book Appointment -->
+        <div class="col-md-6 mb-4 mb-md-0" style="background: #fff; padding: 2rem; border-radius: 8px;">
+          <h3 class="fw-bold mb-3" style="font-family: 'Quicksand', sans-serif;">Book an Appointment</h3>
+          <p style="font-family: 'Quicksand', sans-serif; color: #333;">
+            Schedule your visit with our expert dental team today. We offer personalized care to keep your smile healthy and bright.
+          </p>
+          <a href="#" class="btn btn-primary" style="background-color: #00A7FF; border: none;">Book</a>
+        </div>
+  
+        <!-- Get In Touch -->
+        <div class="col-md-6" style="background: #F2F2F2; padding: 2rem; border-radius: 8px;">
+          <h3 class="fw-bold mb-3" style="font-family: 'Quicksand', sans-serif;">Get In Touch</h3>
+          <ul class="list-unstyled" style="font-family: 'Quicksand', sans-serif; color: #333; font-size: 1rem;">
+            <li class="mb-3 d-flex align-items-center">
+              <!-- Mobile phone icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#00A7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-2" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>+1 (555) 123-4567</span>
+            </li>
+            <li class="mb-3 d-flex align-items-center">
+              <!-- Location icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#00A7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-2" viewBox="0 0 24 24">
+                <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>123 Smile St, Tooth City, TX 75001</span>
+            </li>
+            <li class="mb-3 d-flex align-items-center">
+              <!-- Instagram icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#00A7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-2" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37a4 4 0 1 1-4.73-4.73 4 4 0 0 1 4.73 4.73z"/>
+                <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+              </svg>
+              <span>@pita.dental</span>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <section style="background-color: #00080D; padding: 3rem 0; color: #fff;">
+    <div class="container">
+      <h2 class="text-center mb-5" style="font-family: 'Quicksand', sans-serif; font-weight: 600;">
+        What Our Patients Say
+      </h2>
+
+      <p class="mb-4">Hear directly from our satisfied patients who trust Pita Dental for their smiles. Our commitment to compassionate care and excellent results shines through every story. Discover why so many choose us for a confident, healthy smile.</p>
+  
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+  
+          <!-- Testimonial 1 -->
+          <div class="swiper-slide">
+            <div
+              class="testimonial-card p-4"
+              style="background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; min-height: 180px;"
+            >
+              <p style="font-family: 'Quicksand', sans-serif; font-size: 1rem; font-style: italic; line-height: 1.4;">
+                "Pita Dental transformed my smile with gentle care and professionalism. Highly recommend!"
+              </p>
+              <div class="stars mb-2" style="color: #fff;">
+                ★★★★☆
+              </div>
+              <div
+                class="testimonial-author"
+                style="font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 0.9rem;"
+              >
+                – Sarah M.
+              </div>
+            </div>
+          </div>
+  
+          <!-- Testimonial 2 -->
+          <div class="swiper-slide">
+            <div
+              class="testimonial-card p-4"
+              style="background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; min-height: 180px;"
+            >
+              <p style="font-family: 'Quicksand', sans-serif; font-size: 1rem; font-style: italic; line-height: 1.4;">
+                "Excellent service and caring staff! My dental anxiety disappeared thanks to their kindness."
+              </p>
+              <div class="stars mb-2" style="color: #fff;">
+                ★★★★★
+              </div>
+              <div
+                class="testimonial-author"
+                style="font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 0.9rem;"
+              >
+                – Jason T.
+              </div>
+            </div>
+          </div>
+  
+          <!-- Testimonial 3 -->
+          <div class="swiper-slide">
+            <div
+              class="testimonial-card p-4"
+              style="background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; min-height: 180px;"
+            >
+              <p style="font-family: 'Quicksand', sans-serif; font-size: 1rem; font-style: italic; line-height: 1.4;">
+                "Professional, friendly, and highly skilled. My smile has never looked better!"
+              </p>
+              <div class="stars mb-2" style="color: #fff;">
+                ★★★★☆
+              </div>
+              <div
+                class="testimonial-author"
+                style="font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 0.9rem;"
+              >
+                – Emily R.
+              </div>
+            </div>
+          </div>
+  
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination mt-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #fff; padding: 2rem 0; font-family: 'Quicksand', sans-serif; color: #333;">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      
+      <!-- Social Media Links -->
+      <ul class="list-unstyled d-flex mb-3 mb-md-0 gap-3" style="font-size: 1.5rem;">
+        <li>
+          <a href="#" aria-label="Instagram" style="color: #333; text-decoration: none;">
+            <!-- Instagram SVG icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37a4 4 0 1 1-4.73-4.73 4 4 0 0 1 4.73 4.73z"></path>
+              <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="TikTok" style="color: #333; text-decoration: none;">
+            <!-- TikTok SVG icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M9 2v14a4 4 0 1 0 4-4h4"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Facebook" style="color: #333; text-decoration: none;">
+            <!-- Facebook SVG icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M18 2h-3a4 4 0 0 0-4 4v3H7v4h4v8h4v-8h3l1-4h-4V6a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Twitter" style="color: #333; text-decoration: none;">
+            <!-- Twitter SVG icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="LinkedIn" style="color: #333; text-decoration: none;">
+            <!-- LinkedIn SVG icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </li>
+      </ul>
+  
+      <!-- Trademark -->
+      <div style="font-size: 0.9rem;">
+        &copy; 2025 Pita Dental. All rights reserved.
+      </div>
+  
+      <!-- Scroll to Top Button -->
+      <button
+        id="scrollTopBtn"
+        aria-label="Scroll to top"
+        style="
+          background: transparent;
+          border: 2px solid #00A7FF;
+          color: #00A7FF;
+          padding: 0.5rem 0.6rem;
+          border-radius: 50%;
+          font-size: 1.3rem;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background-color 0.3s, color 0.3s;
+          margin-left: 1rem;
+        "
+        onmouseover="this.style.backgroundColor='#00A7FF'; this.style.color='#fff';"
+        onmouseout="this.style.backgroundColor='transparent'; this.style.color='#00A7FF';"
+        class="my-4"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <polyline points="18 15 12 9 6 15" />
+        </svg>
+      </button>
+    </div>
+  </footer>
+  
+  
+  <!-- Include Swiper JS (place before closing body tag) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- jQuery -->
+  <script 
+    src="https://code.jquery.com/jquery-3.7.0.min.js" 
+    integrity="sha256-3gJwYp4ROH5vEeqk4y+Ff6doxZ27yDk1fXvH1PrhGj0=" 
+    crossorigin="anonymous">
+  </script>
+
+  <!-- Bootstrap Bundle JS (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('#btnClick').click(function() {
+        $('#message').text('Button clicked! Hello from jQuery.');
+      });
+    });
+  </script>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  const scrollBtn = document.getElementById("scrollTopBtn");
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
+
+</body>
+</html
